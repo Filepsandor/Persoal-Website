@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.container {
+    width: 400px;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+        0 5px 12px -2px rgba(0, 0, 0, 0.1),
+        0 18px 36px -6px rgba(0, 0, 0, 0.1);
+}
+
+.container .title {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container form input {
+    display: none;
+}
+
+.container form .category {
+    margin-top: 10px;
+    padding-top: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+}
+
+.category label {
+    height: 145px;
+    padding: 20px;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+}
+
+#visa:checked~.category .visaMethod,
+#mastercard:checked~.category .mastercardMethod,
+#paypal:checked~.category .paypalMethod,
+#AMEX:checked~.category .amexMethod {
+    box-shadow: 0px 0px 0px 1px #00A170;
+}
+
+#visa:checked~.category .visaMethod .check,
+#mastercard:checked~.category .mastercardMethod .check,
+#paypal:checked~.category .paypalMethod .check,
+#AMEX:checked~.category .amexMethod .check {
+    display: block;
+}
+
+label .imgName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.imgName span {
+    position: absolute;
+    top: 72%;
+    transform: translateY(-72%);
+}
+
+.imgName .imgContainer {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 35%;
+    transform: translateY(-35%);
+}
+
+img {
+    width: 50px;
+    height: auto;
+}
+
+.visa img {
+    width: 80px;
+}
+
+.mastercard img {
+    width: 65px;
+}
+
+.paypal img {
+    width: 80px;
+}
+
+.AMEX img {
+    width: 50px;
+}
+
+.check {
+    display: none;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+}
+
+.check i {
+    font-size: 18px;
+}
+
+.button {
+    background: #2B2D2F;
+    height: 80px;
+    width: 200px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.text {
+    font: bold 1.25rem/1 poppins;
+    color: #71DFBE;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-52%);
+    left: 0;
+    right: 0;
+}
+
+.progress-bar {
+    position: absolute;
+    height: 10px;
+    width: 0;
+    right: 0;
+    top: 50%;
+    left: 50%;
+    border-radius: 200px;
+    transform: translateY(-50%) translateX(-50%);
+    background: lighten(#2B2D2F, 15%);
+}
+
+svg {
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    right: 0;
+}
+
+.check {
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.section {
+    margin-left: 5rem;
+}
+
+button {
+    position: relative;
+    width: 250px;
+    height: 75px;
+    border: 0;
+    outline: none;
+    background: gray;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.checked {
+    width: 75px;
+    height: 75px;
+    border-radius: 40px;
+    box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    right: -40px;
+    opacity: 0;
+    background: #00A170;
+}
+
+.checked svg {
+    width: 40px;
+    margin: 20px;
+}
+
+.checked path {
+    stroke-width: 3;
+    stroke: #fff;
+    stroke-dasharray: 34;
+    stroke-dashoffset: 34;
+    stroke-linecap: round;
+}
+
+.active {
+    background: #00A170;
+    transition: 1s;
+}
+
+.active p {
+    transition: 1s;
+    margin-right: 100px;
+}
+
+.active .checked {
+    opacity: 1;
+    transition: 1s;
+    right: 0;
+}
+
+.active .checked path {
+    transition: 1s;
+    transition-delay: 1s;
+    stroke-dashoffset: 0;
+}
